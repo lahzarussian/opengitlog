@@ -1,11 +1,9 @@
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
-git branch -M main
-git push -u origin main<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>E-AUKCION || Bayonnomani tekshirish</title>
+    <title>E-AUKSION || Bayonnomani tekshirish</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,33 +11,64 @@ git push -u origin main<!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 <body>
     <header class="header">
         <div class="header-top">
             <div class="container">
                 <div class="header-logos">
-                    <img src="images/gerb.png" alt="O'zbekiston Respublikasi" class="header-logo">
-                    <div class="header-title">
-                        <h1>E-AUKSION.UZ</h1>
-                        <p>O'ZBEKISTON RESPUBLIKASI OLIY MAJILISI SENATI</p>
+                    <img src="images/eauksion.png" alt="E-AUKSION" class="header-logo">
+                    <div class="search-container">
+                        <input type="text" placeholder="Lot raqami yoki mol-mu..." class="search-input">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                            Izlash
+                        </button>
                     </div>
                 </div>
                 <div class="header-actions">
+                    <a href="#" class="header-icon" title="E-AUKSION SHOP">
+                        <img src="images/shop.svg" alt="E-AUKSION SHOP" class="action-logo">
+                    </a>
+                    <a href="#" class="header-icon" title="IPO">
+                        <img src="images/ipo.png" alt="IPO" class="action-logo">
+                    </a>
+                    <a href="#" class="header-icon" title="Assistant">
+                        <img src="images/gerb.png" alt="Assistant" class="action-logo">
+                    </a>
+                    <a href="#" class="header-icon demo" title="Demo">
+                        <i class="fas fa-laptop"></i>
+                        <span>Demo</span>
+                    </a>
                     <button class="lang-switcher">
                         <img src="images/eyeglasses.svg" alt="Accessibility">
                     </button>
-                    <button class="lang-switcher">
-                        <img src="images/eyeglasses.svg" alt="Language">
-                    </button>
+                    <div class="language-switcher">
+                        <span>O'Z</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <a href="#" class="register-link">Ro'yxatdan o'tish</a>
+                    <button class="login-button">Kirish</button>
+                    <div class="datetime">
+                        02.06.2025 (GMT+5)
+                    </div>
                 </div>
             </div>
         </div>
         <div class="header-bottom">
             <div class="container">
-                <nav class="breadcrumb">
-                    <a href="#">Asosiy sahifa</a>
-                    <span class="divider">/</span>
-                    <span>Bayonnomani tekshirish</span>
+                <nav class="main-nav">
+                    <a href="#" class="nav-link">Lotlar</a>
+                    <a href="#" class="nav-link">Yordam</a>
+                    <a href="#" class="nav-link">Savdo haqida</a>
+                    <a href="#" class="nav-link">Preferensiyalar</a>
+                    <a href="#" class="nav-link">Interaktiv xizmatlar</a>
+                    <a href="#" class="nav-link">Korporativ boshqaruv</a>
+                    <a href="#" class="nav-link">Yangiliklar</a>
+                    <a href="#" class="nav-link">Bog'lanish</a>
+                    <a href="#" class="nav-search">
+                        <i class="fas fa-search"></i>
+                    </a>
                 </nav>
             </div>
         </div>
@@ -67,7 +96,7 @@ git push -u origin main<!DOCTYPE html>
                 </div>
                 <div class="info-item">
                     <span class="label">Mol-mulk nomi:</span>
-                    <span class="value">Tadbirkorlik uchun er uchastkasi-B1710401-92678</span>
+                    <span class="value">Tadbirkorlik uchun yer uchastkasi-01710401-92678</span>
                 </div>
                 <div class="info-item">
                     <span class="label">Lot raqami:</span>
@@ -92,13 +121,9 @@ git push -u origin main<!DOCTYPE html>
                 </div>
 
                 <div class="actions">
-                    <button class="download-btn">
-                        <i class="fas fa-download"></i>
-                        Bayonnomani yuklab olish
-                    </button>
-                    <button class="print-btn">
-                        <i class="fas fa-print"></i>
-                        Chop etish
+                    <button class="btn primary-btn">
+                        <i class="fas fa-file-alt"></i>
+                        Bayonnomani ko'rish
                     </button>
                 </div>
             </div>
@@ -107,7 +132,19 @@ git push -u origin main<!DOCTYPE html>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 E-AUKCION. Barcha huquqlar himoyalangan.</p>
+            <div class="footer-content">
+                <p>Copyright 2017-2025. Elektron onlayn-auksionlarni tashkil etish A.J. Barcha huquqlar himoyalangan</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-phone">
+                    <i class="fas fa-phone"></i>
+                    +998 71 202-21-11
+                </div>
+            </div>
         </div>
     </footer>
 
