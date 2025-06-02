@@ -98,7 +98,7 @@ body {
 }
 
 .header-logo {
-    height: 60px;
+    height: 45px;
     width: auto;
     object-fit: contain;
 }
@@ -127,10 +127,10 @@ body {
 .search-container {
     display: flex;
     align-items: center;
-    width: 280px;  /* Increased from 220px */
-    margin: 0 25px;  /* Increased horizontal margin */
-    position: relative;
-    height: 40px;  /* Slightly increased height */
+    margin: 0 20px;
+    height: 40px;
+    flex: 1;
+    max-width: 600px;
 }
 
 .search-input-container {
@@ -138,23 +138,36 @@ body {
     align-items: center;
     flex-grow: 1;
     position: relative;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: #666;
+    font-size: 16px;
+    z-index: 1;
 }
 
 .search-input {
-    width: 100%;
-    height: 36px;
-    padding: 8px 12px 8px 36px;
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    font-size: 13px;
-    background-color: var(--search-bg);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 14px center;
-    background-size: 14px;
-    transition: all 0.2s ease-in-out;
+    flex: 1;
+    height: 100%;
+    padding: 8px 12px 8px 40px;
+    border: none;
+    font-size: 14px;
     outline: none;
-    color: var(--text-color);
+    background: transparent;
+    color: #333;
+    min-width: 100px;
+}
+
+.search-input::placeholder {
+    color: #999;
 }
 
 .search-input:focus {
@@ -164,22 +177,23 @@ body {
 }
 
 .filter-button {
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    bottom: 4px;
-    background: transparent;
-    border: none;
-    border-left: 1px solid var(--border-color);
-    color: var(--light-text);
-    cursor: pointer;
-    padding: 0 12px;
-    border-radius: 0 3px 3px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0 14px;
+    height: 100%;
+    font-size: 16px;
     transition: all 0.2s ease;
-    font-size: 14px;
+    border-left: 1px solid #eee;
+    border-radius: 0;
+}
+
+.filter-button:hover {
+    background: #eee;
 }
 
 .filter-button:hover {
@@ -187,7 +201,25 @@ body {
 }
 
 .search-button {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #0c3d85;
+    color: white;
+    border: none;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-radius: 0 4px 4px 0;
+}
+
+.search-button:hover {
+    background: #0a336e;
 }
 
 .header-actions {
@@ -210,8 +242,8 @@ body {
 }
 
 .accessibility-icon {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -443,34 +475,26 @@ body {
 .language-switcher {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 5px 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    background: white;
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    font-size: 13px;
-    margin: 0 8px;
-    height: 34px;
-    min-width: 45px;
+    color: #0c3d85;
+    font-size: 14px;
+    font-weight: 500;
     font-family: 'Roboto', sans-serif;
 }
 
 .register-link {
-    color: var(--light-text);
+    color: #0c3d85;
     text-decoration: none;
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-sm);
-    transition: color 0.2s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
     margin: 0 10px;
     white-space: nowrap;
-    padding: 4px 0;
     font-family: 'Roboto', sans-serif;
-}
-
-.register-link:hover {
-    color: var(--primary-color);
 }
 
 .login-button, .register-link {
@@ -484,14 +508,13 @@ body {
 }
 
 .login-button {
-    background-color: var(--primary-color);
+    background-color: #0c3d85;
     color: white;
     border: none;
-    border-radius: 6px;
     padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: 500;
     transition: all 0.2s ease;
     white-space: nowrap;
 }
