@@ -19,7 +19,12 @@
                 <div class="header-logos">
                     <img src="images/eauksion.png" alt="E-AUKSION" class="header-logo">
                     <div class="search-container">
-                        <input type="text" placeholder="Lot raqami yoki mol-mu..." class="search-input">
+                        <div class="search-input-container">
+                            <input type="text" placeholder="Lot raqami yoki mol-mu..." class="search-input">
+                            <button class="filter-button">
+                                <i class="fas fa-filter"></i>
+                            </button>
+                        </div>
                         <button class="search-button">
                             <i class="fas fa-search"></i>
                             Izlash
@@ -27,21 +32,23 @@
                     </div>
                 </div>
                 <div class="header-actions">
-                    <a href="#" class="header-icon" title="E-AUKSION SHOP">
-                        <img src="images/shop.svg" alt="E-AUKSION SHOP" class="action-logo">
-                    </a>
                     <a href="#" class="header-icon" title="IPO">
-                        <img src="images/ipo.png" alt="IPO" class="action-logo">
+                        <img src="images/ipo.png" alt="IPO" class="action-logo ipo-logo">
+                    </a>
+                    <a href="#" class="header-icon" title="Shop">
+                        <img src="images/shop.svg" alt="Shop" class="action-logo shop-logo desktop-logo">
+                        <img src="images/bolga.png" alt="Shop" class="action-logo shop-logo mobile-logo">
                     </a>
                     <a href="#" class="header-icon" title="Assistant">
-                        <img src="images/gerb.png" alt="Assistant" class="action-logo">
+                        <img src="images/gerbasistant.png" alt="Assistant" class="action-logo assistant-logo desktop-logo">
+                        <img src="images/gerb.png" alt="Gerb" class="action-logo gerb-logo mobile-logo">
                     </a>
                     <a href="#" class="header-icon demo" title="Demo">
                         <i class="fas fa-laptop"></i>
                         <span>Demo</span>
                     </a>
-                    <button class="lang-switcher">
-                        <img src="images/eyeglasses.svg" alt="Accessibility">
+                    <button class="lang-switcher" title="Accessibility">
+                        <img src="images/eyeglasses.svg" alt="Accessibility" class="accessibility-icon">
                     </button>
                     <div class="language-switcher">
                         <span>O'Z</span>
@@ -49,16 +56,16 @@
                     </div>
                     <a href="#" class="register-link">Ro'yxatdan o'tish</a>
                     <button class="login-button">Kirish</button>
-                    <div class="datetime">
-                        02.06.2025 (GMT+5)
-                    </div>
                 </div>
             </div>
         </div>
         <div class="header-bottom">
             <div class="container">
                 <nav class="main-nav">
-                    <a href="#" class="nav-link">Lotlar</a>
+                    <button class="hamburger-menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="#" class="nav-link active">Lotlar</a>
                     <a href="#" class="nav-link">Yordam</a>
                     <a href="#" class="nav-link">Savdo haqida</a>
                     <a href="#" class="nav-link">Preferensiyalar</a>
@@ -66,9 +73,13 @@
                     <a href="#" class="nav-link">Korporativ boshqaruv</a>
                     <a href="#" class="nav-link">Yangiliklar</a>
                     <a href="#" class="nav-link">Bog'lanish</a>
-                    <a href="#" class="nav-search">
-                        <i class="fas fa-search"></i>
-                    </a>
+                    <div class="nav-right">
+                        <div class="datetime">02.06.2025</div>
+                        <div class="time-zone">(GMT+5)</div>
+                        <a href="#" class="nav-search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
                 </nav>
             </div>
         </div>
