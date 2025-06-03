@@ -154,6 +154,17 @@ body {
     z-index: 1;
 }
 
+.qr-text {
+    display: none;
+}
+
+.qr-text p {
+    margin: 0 0 8px 0;
+    color: #4a5568;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
 .search-input {
     flex: 1;
     height: 100%;
@@ -424,8 +435,6 @@ body {
     white-space: nowrap;
 }
 
-
-
 .nav-link {
     margin: 4px 2px;
     border-radius: 6px;
@@ -509,7 +518,7 @@ body {
     background-color: #0c3d85;
     color: white;
     border: none;
-    padding: 0.5rem 1.5rem;
+    padding: 6px 16px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
@@ -791,31 +800,156 @@ body {
     background: white;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 32px;
-    margin: 24px auto;
-    max-width: 1000px;
-    border: 1px solid #e0e0e0;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    max-width: 700px;
+    position: relative;
+    width: 85%;
+    padding: 0 1px;
+}
+
+.page-header {
+    margin: 0 auto 24px;
+    max-width: 800px;
+    padding: 0 16px;
     position: relative;
 }
 
-.card h2 {
-    font-size: 1.5rem;
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0 2px 0;
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+}
+
+.header-content::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background-color: #ff8c00;
+    border-radius: 2px;
+}
+
+.back-button {
+    color: #0c3d85;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    position: absolute;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.back-button:hover {
+    background-color: rgba(12, 61, 133, 0.1);
+}
+
+.card-title {
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #1a1a1a;
-    margin: 0 0 24px 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #f0f0f0;
+    color: #0c3d85;
+    margin: 0;
+    padding: 0 0 8px 0;
+    position: relative;
+    background: transparent;
+    border: none;
     font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.card-title {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.card-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .info-item {
     display: flex;
-    margin-bottom: 12px;
-    font-size: 15px;
-    line-height: 1.6;
-    flex-wrap: wrap;
-    padding: 8px 0;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    align-items: center;
+    margin: 0 -1px;
+    padding: 4px 21px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item .label {
+    padding: 6px 12px 6px 0;
+    color: #0c3d85;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.info-item .value {
+    padding: 6px 0;
+    color: #0c3d85;
+    font-size: 0.9rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.status-badge.active {
+    background-color: #4aaa4d;
+    color: white;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin: 2px 0;
+    font-weight: 500;
+}
+
+.info-item:last-child .label,
+.info-item:last-child .value {
+    border-bottom: none;
+}
+
+.info-item:hover {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
 }
 
 .info-item:last-child {
@@ -824,17 +958,16 @@ body {
 
 .label {
     font-weight: 500;
-    color: #555;
+    color: #4a5568;
     min-width: 200px;
-    margin-right: 10px;
-    flex-shrink: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .value {
-    flex: 1;
-    color: #222;
+    color: #1a202c;
     word-break: break-word;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 .status-badge {
@@ -849,8 +982,8 @@ body {
 }
 
 .status-badge.active {
-    background-color: #e6f7ee;
-    color: #10b981;
+    background-color: #4aaa4d;
+    color: #ffffff;
 }
 
 .status-badge i {
@@ -859,44 +992,75 @@ body {
 }
 
 /* QR Code Section */
-.qr-container {
+.last-three-rows {
     display: flex;
-    align-items: center;
-    margin: 32px 0;
-    padding: 24px;
-    background: #f8f9fa;
-    border-radius: 6px;
-    gap: 24px;
-    border: 1px solid #e9ecef;
-    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    align-items: flex-start;
 }
 
-.qr-code {
-    width: 140px;
-    height: 140px;
-    background: white;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+.last-rows-container {
+    flex: 1;
+}
+
+.qr-container {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+}
+
+.card-actions {
+    padding: 16px;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.view-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    gap: 8px;
+    border-radius: 4px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.qr-image {
+.view-button:hover {
+    background-color: #e67e00;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.qr-code img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: contain;
 }
 
 .qr-text {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
     color: #4b5563;
     font-family: 'Roboto', sans-serif;
     flex: 1;
-    min-width: 250px;
+    padding: 10px 0;
 }
 
 .qr-link {
@@ -987,8 +1151,8 @@ body {
 .social-actions {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    gap: 15px;
+    margin-top: 16px;
+    width: 100%;
 }
 
 .social-icon {
