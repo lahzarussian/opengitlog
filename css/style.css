@@ -805,8 +805,7 @@ body {
     border: 1px solid #e2e8f0;
     max-width: 700px;
     position: relative;
-    width: 85%;
-    padding: 0 1px;
+    width: 96%;
 }
 
 .page-header {
@@ -890,7 +889,7 @@ body {
 }
 
 .card-content {
-    padding: 16px;
+    padding: 0 16px 16px 16px;
 }
 
 .info-container {
@@ -904,8 +903,8 @@ body {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     align-items: center;
-    margin: 0 -1px;
-    padding: 4px 21px;
+    padding: 8px 20px;
+    margin: 0;
 }
 
 .info-item:last-child {
@@ -917,9 +916,10 @@ body {
     color: #0c3d85;
     font-weight: 600;
     font-size: 0.9rem;
-    width: 35%;
+    min-width: 200px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .info-item .value {
@@ -997,21 +997,36 @@ body {
     position: relative;
     width: 100%;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 .last-rows-container {
     flex: 1;
+    padding: 0;
 }
 
 .qr-container {
-    margin-left: 20px;
-    margin-top: 10px;
-    width: 80px;
+    position: relative;
+    width: 50px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-start;
     background: transparent;
+    margin-left: 8px;
+    padding-top: 6px;
+}
+
+.qr-code {
+    width: 100%;
+    height: auto;
+}
+
+.qr-code img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .card-actions {
@@ -1019,6 +1034,70 @@ body {
     padding-top: 0;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Social Share Section */
+.social-share {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 40px;
+    max-width: 700px;
+    width: 96%;
+    padding: 0 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f0f4f8;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+}
+
+.social-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.4);
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover .social-img {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Specific icon hover effects */
+.social-icon[title="Telegram"]:hover {
+    background-color: #0088cc;
+}
+
+.social-icon[title="Facebook"]:hover {
+    background-color: #1877f2;
+}
+
+.social-icon[title="Instagram"]:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.social-icon[title="Twitter"]:hover {
+    background-color: #1da1f2;
 }
 
 .view-button {
@@ -1127,12 +1206,26 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #f5f5f5;
     color: #666;
-    padding: 30px 0;
-    margin-top: 50px;
-    border-top: 1px solid #e0e0e0;
-    font-size: 14px;
+    padding: 20px 0 40px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    padding: 0 16px;
+}
+
+.footer p {
+    margin: 0 0 8px;
+}
+
+.footer p:first-child {
+    font-weight: 500;
+    color: #333;
 }
 
 .footer-content {
