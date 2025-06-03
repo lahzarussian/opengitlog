@@ -98,7 +98,7 @@ body {
 }
 
 .header-logo {
-    height: 45px;
+    height: 55px;
     width: auto;
     object-fit: contain;
 }
@@ -1160,9 +1160,49 @@ body {
     text-align: left;
 }
 
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-phone {
+    margin-left: 20px;
+}
+
+.phone-number {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #073271;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    direction: ltr; /* Ensure LTR for phone number */
+    unicode-bidi: bidi-override; /* Ensure number direction is preserved */
+}
+
+.phone-icon {
+    width: 72px;
+    height: 72px;
+    margin-right: 0px;
+    transition: transform 0.2s ease;
+    display: block;
+    object-fit: contain;
+}
+
+/* Hover effects removed as requested */
+
 .copyright {
-    font-size: 12px;
-    color: #6c757d;
+    font-size: 14px;
+    color: #073271;
     margin-bottom: 15px;
     line-height: 1.5;
 }
@@ -1176,21 +1216,43 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: #e9ecef;
-    transition: background-color 0.2s;
+    width: 44px;
+    height: 44px;
+    transition: opacity 0.2s;
 }
 
 .social-icon:hover {
-    background-color: #dee2e6;
+    opacity: 0.8;
 }
 
 .social-icon img {
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.collect-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.collect-logo {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.collect-text {
+    font-size: 11px;
+    color: #073271;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Responsive Design */
