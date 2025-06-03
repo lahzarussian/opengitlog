@@ -1038,67 +1038,9 @@ body {
 }
 
 /* Social Share Section */
-.social-share {
-    display: flex;
-    justify-content: center;
-    margin: 30px auto 40px;
-    max-width: 700px;
-    width: 96%;
-    padding: 0 16px;
-}
 
-.social-icons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-}
 
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #f0f4f8;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    overflow: hidden;
-    padding: 6px;
-}
 
-.social-icon:hover {
-    transform: translateY(-2px);
-}
-
-.social-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0.4);
-    transition: all 0.2s ease;
-}
-
-.social-icon:hover .social-img {
-    filter: grayscale(0%) brightness(1);
-}
-
-/* Specific icon hover effects */
-.social-icon[title="Telegram"]:hover {
-    background-color: #0088cc;
-}
-
-.social-icon[title="Facebook"]:hover {
-    background-color: #1877f2;
-}
-
-.social-icon[title="Instagram"]:hover {
-    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-}
-
-.social-icon[title="Twitter"]:hover {
-    background-color: #1da1f2;
-}
 
 .view-button {
     padding: 8px 16px;
@@ -1204,73 +1146,6 @@ body {
     font-size: 16px;
 }
 
-/* Footer */
-.footer {
-    color: #666;
-    padding: 20px 0 40px;
-    font-size: 13px;
-    line-height: 1.5;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer-content {
-    padding: 0 16px;
-}
-
-.footer p {
-    margin: 0 0 8px;
-}
-
-.footer p:first-child {
-    font-weight: 500;
-    color: #333;
-}
-
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.footer p {
-    margin-bottom: 15px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.social-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-    width: 100%;
-}
-
-.social-icon {
-    color: #666;
-    font-size: 20px;
-    transition: color 0.2s;
-}
-
-.social-icon:hover {
-    color: var(--primary-color);
-}
-
-.footer-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #444;
-    font-weight: 500;
-    margin-top: 10px;
-}
-
-.footer-phone i {
-    color: var(--primary-color);
-    font-size: 16px;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
