@@ -133,6 +133,10 @@ body {
     max-width: 600px;
 }
 
+.mobile-search {
+    display: none; /* Hide mobile search by default */
+}
+
 .search-input-container {
     display: flex;
     align-items: center;
@@ -554,6 +558,7 @@ body {
 .main-nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
     margin: 0;
     padding: 0 20px;
@@ -561,6 +566,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .main-nav::-webkit-scrollbar {
@@ -628,28 +634,7 @@ body {
     }
 }
 
-@media (max-width: 992px) {
-    .search-container {
-        display: none;
-    }
-    
-    .header-logo {
-        height: 40px;
-    }
-    
-    .action-logo {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .header-icon span {
-        display: none;
-    }
-    
-    .header-icon.demo span {
-        display: inline;
-    }
-}
+
 
 @media (max-width: 1200px) {
     .container {
@@ -687,33 +672,109 @@ body {
     }
 }
 
+/* Card Info Layout */
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Aligns label with the top of multi-line values */
+    padding: 16px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.last-rows-container .info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item .label {
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 250px;
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+.info-item .value {
+    flex-grow: 1;
+    text-align: left;
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.info-item .status-badge {
+    flex-grow: 0;
+}
+
+.status-badge.active {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 @media (max-width: 992px) {
-    .search-container {
-        display: none;
-    }
-    
-    .header-logo {
-        margin-right: 0;
-    }
-    
-    .header-icon span {
-        display: none;
-    }
-    
-    .header-icon.demo span {
-        display: inline;
-    }
-    
-    .language-switcher {
+    /* Hide desktop-only elements */
+    .header-logos .search-container,
+    .nav-links,
+    .language-switcher,
+    .register-link,
+    .login-button {
         display: none;
     }
 
+    /* Show and order mobile elements */
     .hamburger-menu {
         display: block;
+        order: 1;
     }
 
-    .nav-links {
-        display: none;
+    .mobile-search {
+        display: flex;
+        order: 2;
+        /* flex-grow removed to allow grouping on the left */
+        margin: 0 10px;
+    }
+
+    .mobile-search .search-input-container {
+        width: 100%;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        order: 3;
+        margin-left: auto; /* Push to the far right */
+    }
+
+    .nav-right .header-icon {
+        display: none; /* Hide duplicate search icon on mobile */
+    }
+
+    .nav-right .datetime {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        color: #6c757d;
+        margin-right: 15px;
+    }
+    
+    .datetime {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    /* Main navigation container layout */
+    .main-nav {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0 10px; /* Add horizontal padding */
+    }
+
+    /* Style for the opened dropdown menu */
+    .nav-links.active {
+        display: flex;
         position: absolute;
         top: 100%;
         left: 0;
@@ -724,20 +785,17 @@ body {
         padding: 10px 0;
         border-top: 1px solid var(--border-color);
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
     }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-link {
+    .nav-links.active .nav-link {
         width: 100%;
         padding: 12px 20px;
         height: auto;
         border-bottom: 1px solid var(--border-color);
     }
 
-    .nav-link:last-child {
+    .nav-links.active .nav-link:last-child {
         border-bottom: none;
     }
 }
@@ -786,6 +844,26 @@ body {
     .main-nav {
         height: 40px;
         padding: 0 10px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+
+    .footer-phone {
+        margin-top: 15px;
     }
     
     .nav-link {
