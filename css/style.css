@@ -700,7 +700,8 @@ body {
     
     .header-actions {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
+        gap: 5px;
         order: 3;
         padding-top: 8px;
         border-top: 1px solid var(--border-color);
@@ -1007,7 +1008,7 @@ body {
 
 .qr-container {
     position: relative;
-    width: 50px;
+    width: 150px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1015,6 +1016,7 @@ body {
     justify-content: flex-start;
     background: transparent;
     margin-left: 8px;
+    margin-right: 20px; /* Move slightly left from the edge */
     padding-top: 6px;
 }
 

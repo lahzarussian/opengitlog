@@ -75,6 +75,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    function updateDateTime() {
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+
+        const timezoneOffset = -now.getTimezoneOffset() / 60;
+        const timezoneSign = timezoneOffset >= 0 ? '+' : '-';
+        const timezoneHours = Math.abs(Math.trunc(timezoneOffset));
+
+        const formattedDateTime = `${day}.${month}.${year} (GMT${timezoneSign}${timezoneHours})`;
+
+        const datetimeElement = document.getElementById('datetime-display');
+        if (datetimeElement) {
+            datetimeElement.textContent = formattedDateTime;
+        }
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 60000); // Update every minute
 });
 
 // Function to generate QR code (placeholder for actual QR code generation)
