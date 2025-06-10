@@ -567,6 +567,22 @@ body {
     display: none; /* Chrome, Safari, Opera */
 }
 
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 24px;
+    color: #0c3d85;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .nav-link {
     color: #0c3d85;
     text-decoration: none;
@@ -691,6 +707,39 @@ body {
     .language-switcher {
         display: none;
     }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--header-bottom-bg);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 12px 20px;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -723,6 +772,10 @@ body {
     .header-icon.demo {
         padding: 4px 8px;
     }
+
+    .header-icon.demo span {
+        display: none;
+    }
     
     .login-button {
         padding: 4px 12px;
@@ -741,6 +794,11 @@ body {
     
     .nav-right {
         display: none;
+    }
+
+    .last-three-rows {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -1259,19 +1317,26 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .info-item {
-        flex-direction: column;
-        padding: 10px 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 12px 0;
+        gap: 10px;
     }
     
     .label {
-        margin-bottom: 5px;
-        min-width: 100%;
+        margin-bottom: 0;
+        min-width: auto;
         font-weight: 600;
         color: #444;
+        flex-basis: 40%;
+        flex-shrink: 0;
     }
     
     .value {
-        width: 100%;
+        width: auto;
+        text-align: right;
+        flex-basis: 60%;
     }
     
     .header .container {
@@ -1315,12 +1380,15 @@ body {
     
     .qr-container {
         padding: 15px 10px;
-        margin: 20px 0;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .qr-image {
-        width: 130px;
-        height: 130px;
+        width: 160px;
+        height: 160px;
     }
     
     .qr-text {
