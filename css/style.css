@@ -1022,13 +1022,29 @@ body {
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    padding: 20px; /* Add padding to shift content */
+    margin: 16px auto;
+    padding: 16px 12px;
     overflow: hidden;
     border: 1px solid #e2e8f0;
-    max-width: 700px;
+    max-width: 800px;
+    width: 94%;
     position: relative;
-    width: 96%;
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 24px;
+    }
 }
 
 .page-header {
@@ -1112,7 +1128,19 @@ body {
 }
 
 .card-content {
-    padding: 0 16px 16px 16px;
+    padding: 0 4px 12px 4px;
+}
+
+@media (min-width: 768px) {
+    .card-content {
+        padding: 0 12px 20px 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-content {
+        padding: 0 16px 24px 16px;
+    }
 }
 
 .info-container {
